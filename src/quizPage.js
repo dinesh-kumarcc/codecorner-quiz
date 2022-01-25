@@ -14,7 +14,6 @@ export default function QuizApp() {
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 	const [color, setColor] = useState(false);
-	const [play, setPlay] = useState(true);
 	const [score, setScore] = useState(0);
 
 	const local = localStorage.setItem("quiz", JSON.stringify(localData))
@@ -48,6 +47,9 @@ export default function QuizApp() {
 			setShowScore(true);
 		}
 	};
+    setTimeout(() => {
+       handleAnswerOptionClick()
+      }, 88000);
 
 
 	function replayButton() {
@@ -95,7 +97,7 @@ export default function QuizApp() {
 							//   style={{
 							// 	backgroundColor: answerOption.isCorrect == true ? "green" : ""
 							// }} 
-							className={answerOption.isCorrect == true && color ? 'rowButton MuiButton-outlinedPrimary color': 'rowButton MuiButton-outlinedPrimary'} 
+							className={answerOption.isCorrect == true && color ? 'rowButton MuiButton-outlinedPrimary correctColor': 'rowButton MuiButton-outlinedPrimary'} 
                             onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
 					))}
 				</div>
