@@ -70,4 +70,32 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 <!-- 
 https://github.com/chrisblakely01/quiz-app
+
+
+{showScore ? (
+				<>
+				<div className='question-container'>
+					<div className='question-text'>
+						<span className='App-header'> You scored {score} / {questions.length} Are You Kidding Me?</span>
+						<button onClick={replayButton} className='rowButton MuiButton-outlinedPrimary'>REPLAY!</button>
+					</div>
+				</div>
+				</>
+			) : (<>
+				<div className='App-header'>
+					<span className='App-header'>Question {currentQuestion + 1}</span>/{questions.length}
+				</div>
+				<div className='question-container'>
+					<span className='question-text'>{questions[currentQuestion].questionText}</span>
+				</div>
+				<div className='answers-container'>
+					{questions[currentQuestion].answerOptions.map((answerOption) => (
+						<button
+							//   style={{
+							// 	backgroundColor:  color? "red" : ""'rowButton MuiButton-outlinedPrimary'
+							// }} 
+							className={color ? 'rowButton MuiButton-outlinedPrimary color': 'rowButton MuiButton-outlinedPrimary'} onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+					))}
+				</div>
+			</>)}
  -->

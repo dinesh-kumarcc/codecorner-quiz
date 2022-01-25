@@ -88,7 +88,7 @@ const questions = [
             { answerText: 'Martina Navratilova', isCorrect: true },
             { answerText: 'Martina Hingis', isCorrect: false },
         ],
-    }
+    },
     // {
     //     questionText: 'In which city were the 1992 Summer Olympics held?',
     //     answerOptions: [
