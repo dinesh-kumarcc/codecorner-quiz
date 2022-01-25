@@ -30,15 +30,14 @@ export default function QuizApp() {
 		setData(questions);
 		setLocalData(questions)
 		localStorage.setItem("quizQuestions", JSON.stringify(data));
-	}, [score])
+        console.log(score,'score')
+	}, [score,showScore])
 
 	const handleAnswerOptionClick = (isCorrect) => {
 		console.log(isCorrect, 'isCorrect')
 		if (isCorrect) {
 			setScore(score + 1);
-			setColor(true);
 		}
-		setColor(false)
 		const nextQuestion = currentQuestion + 1;
 		if (nextQuestion < questions.length) {
 			setCurrentQuestion(nextQuestion);
@@ -51,6 +50,7 @@ export default function QuizApp() {
 	function replayButton() {
 		console.log('button')
 		setScore(0)
+        setCurrentQuestion(0)
 		setShowScore(false)
 	}
 
