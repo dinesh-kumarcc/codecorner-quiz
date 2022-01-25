@@ -38,6 +38,7 @@ export default function QuizApp() {
 		if (isCorrect) {
 			setScore(score + 1);
 		}
+        console.log(color,'color')
 		const nextQuestion = currentQuestion + 1;
 		if (nextQuestion < questions.length) {
 			setCurrentQuestion(nextQuestion);
@@ -78,7 +79,7 @@ export default function QuizApp() {
 					{questions[currentQuestion].answerOptions.map((answerOption) => (
 						<button
 							//   style={{
-							// 	backgroundColor:  color? "red" : ""'rowButton MuiButton-outlinedPrimary'
+							// 	backgroundColor:  color? "rowButton MuiButton-outlinedPrimary color" : "rowButton MuiButton-outlinedPrimary"
 							// }} 
 							className={color ? 'rowButton MuiButton-outlinedPrimary color': 'rowButton MuiButton-outlinedPrimary'} onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
 					))}

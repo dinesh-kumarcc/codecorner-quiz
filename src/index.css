@@ -161,6 +161,7 @@ button svg {
 }
 .question-text{
   color: blue;
+  font-weight: 900;
 }
 
 .answers-container{
@@ -174,6 +175,7 @@ button svg {
   border: 1px solid rgba(63, 81, 181, 0.5);
   height: 40px;
   text-align: center;
+  border-radius: 4px;
   justify-content: center;
 }
 .rowButton{
@@ -181,7 +183,7 @@ button svg {
   flex: 1 1 300px;
   font-size: 16px;
   margin: 5px;
-  color: #0a0a0a;
+  color: blue;
   padding-top: 7px;
 }
 .color{
