@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import QuizApp from './quizPage';
+import questions from './quiz';
+
 
 export default function App(){
 
 	const [play,setPlay] = useState(false)
+	useEffect(()=>{
+		localStorage.setItem("quizApp", JSON.stringify(questions))
+	},[])
+
 
 	function playButton() {
 		console.log('playButton');
@@ -28,6 +34,7 @@ export default function App(){
 		</div>
 	)
 }
+
 
 // import React, { useEffect, useState } from 'react';
 // import questions from './quiz';
