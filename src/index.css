@@ -33,6 +33,8 @@ body {
   align-items: center;
   min-height: 100vh;
 }
+
+
 /* 
 .app {
   background-color: rgb(241, 243, 248);
@@ -45,7 +47,6 @@ body {
   display: flex;
   justify-content: space-evenly;
 } */
-
 
 
 .score-section {

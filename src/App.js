@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
 import QuizApp from './quizPage';
 
 export default function App(){
@@ -7,7 +6,7 @@ export default function App(){
 	const [play,setPlay] = useState(false)
 
 	function playButton() {
-		console.log('playButton')
+		console.log('playButton');
 		setPlay(true)
 	}
 
