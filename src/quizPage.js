@@ -37,7 +37,9 @@ export default function QuizApp() {
 		console.log(isCorrect, 'isCorrect')
 		if (isCorrect) {
 			setScore(score + 1);
+            setColor(true)
 		}
+        setColor(false)
         console.log(color,'color')
 		const nextQuestion = currentQuestion + 1;
 		if (nextQuestion < questions.length) {
@@ -61,8 +63,20 @@ export default function QuizApp() {
 			{showScore ? (
 				<>
 				<div className='question-container'>
-					<div className='question-text'>
-						<span className='App-header'> You scored {score} / {questions.length} Are You Kidding Me?</span>
+					<div className='padding'>
+                        {score < 4 ?  (<>
+						<span className='App-header'> You scored </span>
+                        <br/>
+                        <span className='App-header'> {score} / {questions.length}</span>
+                        <br/>
+                         <span className='App-header'>Are You Kidding Me?</span>
+                        </>) : (<>
+                            <span className='App-header'> You scored </span>
+                        <br/>
+                        <span className='App-header'> {score} / {questions.length}</span>
+                        <br/>
+                         <span className='App-header'> Not Bad, Not Bad</span>
+                        </>)}
                         <br/>
 						<button onClick={replayButton} className='rowButton MuiButton-outlinedPrimary'>REPLAY!</button>
 					</div>
@@ -70,7 +84,7 @@ export default function QuizApp() {
 				</>
 			) : (<>
 				<div className='App-header'>
-					<span className='App-header'>Question {currentQuestion + 1}</span>/{questions.length}
+					<span className='App-header1'>Question {currentQuestion + 1}/{questions.length}</span>
 				</div>
 				<div className='question-container'>
 					<span className='question-text'>{questions[currentQuestion].questionText}</span>
@@ -79,9 +93,10 @@ export default function QuizApp() {
 					{questions[currentQuestion].answerOptions.map((answerOption) => (
 						<button
 							//   style={{
-							// 	backgroundColor:  color? "rowButton MuiButton-outlinedPrimary color" : "rowButton MuiButton-outlinedPrimary"
+							// 	backgroundColor: answerOption.isCorrect == true ? "green" : ""
 							// }} 
-							className={color ? 'rowButton MuiButton-outlinedPrimary color': 'rowButton MuiButton-outlinedPrimary'} onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+							className={answerOption.isCorrect == true && color ? 'rowButton MuiButton-outlinedPrimary color': 'rowButton MuiButton-outlinedPrimary'} 
+                            onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
 					))}
 				</div>
 			</>)}
