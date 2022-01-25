@@ -19,13 +19,13 @@ export default function QuizApp() {
     const local = localStorage.setItem("quiz", JSON.stringify(localData))
     const get = JSON.parse(localStorage.getItem("quiz"))
 
-    // console.log(localData, 'localData', get)
+    console.log(localData, 'localData', get)
 
     const record = JSON.parse(localStorage.getItem("quizQuestions"))
     const [questionsData, setQuestionsData] = useState(record || [])
 
     useEffect(() => {
-        // console.log('gggg kk ppp', questions);
+        console.log('gggg kk ppp', questions);
         setData(questions);
         setLocalData(questions)
         localStorage.setItem("quizQuestions", JSON.stringify(data));
@@ -33,7 +33,7 @@ export default function QuizApp() {
     }, [score, showScore])
 
     const handleAnswerOptionClick = (isCorrect) => {
-        // console.log(isCorrect, 'isCorrect')
+        console.log(isCorrect, 'isCorrect')
         if (isCorrect) {
             setScore(score + 1);
             setColor(true)
@@ -53,6 +53,7 @@ export default function QuizApp() {
 
 
     function replayButton() {
+        console.log('button')
         setScore(0)
         setCurrentQuestion(0)
         setShowScore(false)
