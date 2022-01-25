@@ -19,7 +19,7 @@ export default function QuizApp() {
     const local = localStorage.setItem("quiz", JSON.stringify(localData))
     const get = JSON.parse(localStorage.getItem("quiz"))
 
-    console.log(localData, 'localData', get)
+    // console.log(localData, 'localData', get)
 
     const record = JSON.parse(localStorage.getItem("quizQuestions"))
     const [questionsData, setQuestionsData] = useState(record || [])
@@ -33,7 +33,7 @@ export default function QuizApp() {
     }, [score, showScore])
 
     const handleAnswerOptionClick = (isCorrect) => {
-        console.log(isCorrect, 'isCorrect')
+        // console.log(isCorrect, 'isCorrect')
         if (isCorrect) {
             setScore(score + 1);
             setColor(true)
