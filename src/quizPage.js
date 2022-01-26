@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react';
 // import questions from './quiz';
-// import Col from 'react-bootstrap/Col';
-// import Row from 'react-bootstrap/Row';
-// import Container from 'react-bootstrap/Row';
-// import Button from 'react-bootstrap/Row';
-// import { FormGroup } from 'react-bootstrap';
+
 
 
 export default function QuizApp() {
@@ -14,55 +10,50 @@ export default function QuizApp() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [showScore, setShowScore] = useState(false);
     const [color, setColor] = useState(0);
-    const [_color,set_Color] = useState('')
+    const [_color, set_Color] = useState('')
     const [score, setScore] = useState(0);
-
-    const local = localStorage.setItem("quiz", JSON.stringify(localData))
-    const get = JSON.parse(localStorage.getItem("quiz"))
-
+    const [selected, setSelected] = useState('');
 
     const questions = JSON.parse(localStorage.getItem("quizApp"))
-    // const [questionsData, setQuestionsData] = useState(record || [])
-
+    
     useEffect(() => {
         setData(questions);
         setLocalData(questions)
         localStorage.setItem("quizQuestions", JSON.stringify(data));
     }, [score, showScore])
 
-    useEffect(()=>{
+    useEffect(() => {
 
-    },[color,_color])
+    }, [color, _color, selected])
+    const [number, setnumber] = useState(5);
 
-
-
-
-    const handleAnswerOptionClick = (isCorrect,index) => {
-        console.log(isCorrect,'iscorrect')
-        if(isCorrect===1){
+    const handleAnswerOptionClick = (isCorrect, index) => {
+        console.log(isCorrect, 'iscorrect', index)
+      
+        if (isCorrect  == 1) {
             setScore(score + 1);
             set_Color('rowButton MuiButton-outlinedPrimary correctColor')
             setColor(1)
-        }else{
-            setScore(score + 1);
-            setColor(2)
+            setnumber(index)
+        } else {
+            setColor(1)
+            setnumber(index)
             set_Color('rowButton MuiButton-outlinedPrimary color')
         }
-     
-
-        setTimeout(()=>{
-            
+       
+        setTimeout(() => {
             setColor(0)
-            
             const nextQuestion = currentQuestion + 1;
             if (nextQuestion < questions.length) {
                 setCurrentQuestion(nextQuestion);
             } else {
+                setSelected();
                 setShowScore(true);
             }
-        },1000)
+        }, 1000)
 
     };
+
 
     function replayButton() {
         setScore(0)
@@ -74,7 +65,7 @@ export default function QuizApp() {
         <div className='App'>
 
             {showScore ? (
-                <> 
+                <>
                     <div className='question-container'>
                         <div className='padding'>
                             {score < 4 ? (<>
@@ -103,10 +94,11 @@ export default function QuizApp() {
                     <span className='question-text'>{questions[currentQuestion].questionText}</span>
                 </div>
                 <div className='answers-container'>
-                    {questions[currentQuestion].answerOptions.map((answerOption,index) => (
+                    {questions[currentQuestion].answerOptions.map((answerOption, index) => (
                         <button key={index}
-                            className={answerOption.isCorrect===1 && color===1  ? _color : 'rowButton MuiButton-outlinedPrimary'}
-                            onClick={() => handleAnswerOptionClick(answerOption.isCorrect,index)}>{answerOption.answerText}</button>
+                            className={number === index && color==1  ? _color : 'rowButton MuiButton-outlinedPrimary'}
+                            onClick={() => handleAnswerOptionClick(answerOption.isCorrect, index)}>{answerOption.answerText}</button>
+
                     ))}
                 </div>
             </>)}
@@ -253,7 +245,7 @@ export default function QuizApp() {
 //                         <button
 //                             //   style={{
 //                             // 	backgroundColor: answerOption.isCorrect == true ? "green" : ""
-//                             // }} 
+//                             // }}
 //                             className={answerOption.isCorrect == true && color ? 'rowButton MuiButton-outlinedPrimary correctColor' : 'rowButton MuiButton-outlinedPrimary'}
 //                             onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
 //                     ))}

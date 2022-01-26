@@ -99,5 +99,18 @@ https://github.com/chrisblakely01/quiz-app
 				</div>
 			</>)}
 
+
+
+
+    const local = localStorage.setItem("quiz", JSON.stringify(localData))
+    const get = JSON.parse(localStorage.getItem("quiz"))
+
+
+
+  // <button key={index}
+                        //     className={answerOption.isCorrect===1 && color===1  ? _color : 'rowButton MuiButton-outlinedPrimary'}
+                        //     onClick={() => handleAnswerOptionClick(answerOption.isCorrect,index)}>{answerOption.answerText}</button>
+
+	
 			https://www.youtube.com/watch?v=6HZL3f_fJRE
  -->
