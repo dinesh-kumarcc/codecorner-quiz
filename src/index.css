@@ -152,6 +152,9 @@ button svg {
 }
 .App {
   text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-left: 100px;
 }
 .App-header {
   align-items: center;
