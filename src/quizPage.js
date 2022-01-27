@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 // import questions from './quiz';
 
 
-
 export default function QuizApp() {
 
     const [data, setData] = useState([]);
@@ -14,8 +13,12 @@ export default function QuizApp() {
     const [score, setScore] = useState(0);
     const [selected, setSelected] = useState('');
 
-    const questions = JSON.parse(localStorage.getItem("quizApp"))
-    
+    // const questions = JSON.parse(localStorage.getItem("quizApp"))
+    const allquestions = JSON.parse(localStorage.getItem("quizApp"));
+    const questions = allquestions.sort(() => Math.random() - Math.random()).slice(0, 10);
+    console.log(questions,'kkkk')
+//    console.log( questions.sort(() => Math.random() - Math.random()).slice(0, 10),'kk')
+
     useEffect(() => {
         setData(questions);
         setLocalData(questions)
@@ -29,8 +32,8 @@ export default function QuizApp() {
 
     const handleAnswerOptionClick = (isCorrect, index) => {
         console.log(isCorrect, 'iscorrect', index)
-      
-        if (isCorrect  == 1) {
+
+        if (isCorrect == 1) {
             setScore(score + 1);
             set_Color('rowButton MuiButton-outlinedPrimary correctColor')
             setColor(1)
@@ -40,7 +43,7 @@ export default function QuizApp() {
             setnumber(index)
             set_Color('rowButton MuiButton-outlinedPrimary color')
         }
-       
+
         setTimeout(() => {
             setColor(0)
             const nextQuestion = currentQuestion + 1;
@@ -50,7 +53,7 @@ export default function QuizApp() {
                 setSelected();
                 setShowScore(true);
             }
-        }, 1000)
+        }, 500)
 
     };
 
@@ -96,7 +99,7 @@ export default function QuizApp() {
                 <div className='answers-container'>
                     {questions[currentQuestion].answerOptions.map((answerOption, index) => (
                         <button key={index}
-                            className={number === index && color==1  ? _color : 'rowButton MuiButton-outlinedPrimary'}
+                            className={number === index && color == 1 ? _color : 'rowButton MuiButton-outlinedPrimary'}
                             onClick={() => handleAnswerOptionClick(answerOption.isCorrect, index)}>{answerOption.answerText}</button>
 
                     ))}
