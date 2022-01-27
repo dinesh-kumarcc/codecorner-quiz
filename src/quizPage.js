@@ -13,12 +13,12 @@ export default function QuizApp() {
     const [score, setScore] = useState(0);
     const [selected, setSelected] = useState('');
 
-    // const questions = JSON.parse(localStorage.getItem("quizApp"))
-    const allquestions = JSON.parse(localStorage.getItem("quizApp"));
-    const questions = allquestions.sort(() => Math.random() - Math.random()).slice(0, 10);
-    console.log(questions, 'kkkk')
-    // console.log( questions.sort(() => Math.random() - Math.random()).slice(0, 10),'kk')
+    // const questions = JSON.parse(localStorage.getItem("quizApp")) 
+    // const allquestions = JSON.parse(localStorage.getItem("quizApp"));
+    // const questions = allquestions.sort(() => Math.random() - Math.random()).slice(0, 10) || [];
 
+
+    const questions = JSON.parse(localStorage.getItem("randomQuiz"))
     useEffect(() => {
         setData(questions);
         setLocalData(questions)
@@ -26,6 +26,21 @@ export default function QuizApp() {
     }, [score, showScore])
 
     useEffect(() => {
+        console.log(questions, 'questions questions')
+        // const arr = [2, 5, 4, 45, 32, 46, 78, 87, 98, 56, 23, 12];
+        // const chooseRandom = (arr, num = 1) => {
+        //     const res = [];
+        //     for (let i = 0; i < num;) {
+        //         const random = Math.floor(Math.random() * arr.length);
+        //         if (res.indexOf(arr[random]) !== -1) {
+        //             continue;
+        //         };
+        //         res.push(arr[random]);
+        //         i++;
+        //     };
+        //     return res;
+        // };
+        // console.log(chooseRandom(arr, 4),'+++');
 
     }, [color, _color, selected])
     const [number, setnumber] = useState(5);
@@ -61,11 +76,19 @@ export default function QuizApp() {
         setScore(0)
         setCurrentQuestion(0)
         setShowScore(false)
+        localStorage.removeItem('randomQuiz')
+        if (!JSON.parse(localStorage.getItem("randomQuiz"))) {
+            const allquestions = JSON.parse(localStorage.getItem("quizApp"));
+            const questionsq = allquestions.sort(() => Math.random() - Math.random()).slice(0, 10) || [];
+            console.log(questionsq, 'app file')
+            localStorage.setItem("randomQuiz", JSON.stringify(questionsq))
+
+        }
     }
 
     return (
         <>
-        {/* <div className='question-container2'><h5 className='App-header2'>~</h5></div> */}
+            {/* <div className='question-container2'><h5 className='App-header2'>~</h5></div> */}
             <div className='App'>
                 {showScore ? (
                     <>
@@ -105,7 +128,6 @@ export default function QuizApp() {
                         ))}
                     </div>
                 </>)}
-
 
                 {/* {showScore ? (
 				<div className='score-section'>

@@ -155,6 +155,7 @@ button svg {
   justify-content: center;
   align-items: center;
   padding-left: 100px;
+  padding-right: 100px;
 }
 .App-header {
   align-items: center;
@@ -246,7 +247,6 @@ button svg {
   text-align: center;
   width: 100%;
 }
-
 
 .question-container2{
   font-style: italic;

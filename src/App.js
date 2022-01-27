@@ -6,8 +6,14 @@ import questions from './quiz';
 export default function App(){
 
 	const [play,setPlay] = useState(false)
+	const [playrandom,setPlayRandom] = useState([])
 	useEffect(()=>{
 		localStorage.setItem("quizApp", JSON.stringify(questions))
+		const allquestions = JSON.parse(localStorage.getItem("quizApp"));
+		const questionsq = allquestions.sort(() => Math.random() - Math.random()).slice(0, 10) || [];
+		console.log(questionsq,'app file')
+		localStorage.setItem("randomQuiz", JSON.stringify(questionsq))
+
 	},[])
 
 
