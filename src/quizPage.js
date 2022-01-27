@@ -16,8 +16,8 @@ export default function QuizApp() {
     // const questions = JSON.parse(localStorage.getItem("quizApp"))
     const allquestions = JSON.parse(localStorage.getItem("quizApp"));
     const questions = allquestions.sort(() => Math.random() - Math.random()).slice(0, 10);
-    console.log(questions,'kkkk')
-//    console.log( questions.sort(() => Math.random() - Math.random()).slice(0, 10),'kk')
+    console.log(questions, 'kkkk')
+    // console.log( questions.sort(() => Math.random() - Math.random()).slice(0, 10),'kk')
 
     useEffect(() => {
         setData(questions);
@@ -53,8 +53,7 @@ export default function QuizApp() {
                 setSelected();
                 setShowScore(true);
             }
-        }, 500)
-
+        }, 400)
     };
 
 
@@ -65,48 +64,50 @@ export default function QuizApp() {
     }
 
     return (
-        <div className='App'>
-
-            {showScore ? (
-                <>
-                    <div className='question-container'>
-                        <div className='padding'>
-                            {score < 4 ? (<>
-                                <span className='App-header'> You scored </span>
+        <>
+        {/* <div className='question-container2'><h5 className='App-header2'>~</h5></div> */}
+            <div className='App'>
+                {showScore ? (
+                    <>
+                        <div className='question-container'>
+                            <div className='padding'>
+                                {score < 4 ? (<>
+                                    <span className='App-header'> You scored </span>
+                                    <br />
+                                    <span className='App-header'> {score} / {questions.length}</span>
+                                    <br />
+                                    <span className='App-header'>Are You Kidding Me?</span>
+                                </>) : (<>
+                                    <span className='App-header'> You scored </span>
+                                    <br />
+                                    <span className='App-header'> {score} / {questions.length}</span>
+                                    <br />
+                                    <span className='App-header'> Not Bad, Not Bad</span>
+                                </>)}
                                 <br />
-                                <span className='App-header'> {score} / {questions.length}</span>
-                                <br />
-                                <span className='App-header'>Are You Kidding Me?</span>
-                            </>) : (<>
-                                <span className='App-header'> You scored </span>
-                                <br />
-                                <span className='App-header'> {score} / {questions.length}</span>
-                                <br />
-                                <span className='App-header'> Not Bad, Not Bad</span>
-                            </>)}
-                            <br />
-                            <button onClick={replayButton} className='rowButton MuiButton-outlinedPrimary'>REPLAY!</button>
+                                <button onClick={replayButton} className='rowButton MuiButton-outlinedPrimary'>REPLAY!</button>
+                            </div>
                         </div>
+                    </>
+                ) : (<>
+                    <div className='App-header'>
+                        <span className='App-header1'>Question {currentQuestion + 1}/{questions.length}</span>
                     </div>
-                </>
-            ) : (<>
-                <div className='App-header'>
-                    <span className='App-header1'>Question {currentQuestion + 1}/{questions.length}</span>
-                </div>
-                <div className='question-container'>
-                    <span className='question-text'>{questions[currentQuestion].questionText}</span>
-                </div>
-                <div className='answers-container'>
-                    {questions[currentQuestion].answerOptions.map((answerOption, index) => (
-                        <button key={index}
-                            className={number === index && color == 1 ? _color : 'rowButton MuiButton-outlinedPrimary'}
-                            onClick={() => handleAnswerOptionClick(answerOption.isCorrect, index)}>{answerOption.answerText}</button>
+                    <div className='question-container'>
+                        <span className='question-text'>{questions[currentQuestion].questionText}</span>
+                    </div>
+                    <div className='answers-container'>
+                        {questions[currentQuestion].answerOptions.map((answerOption, index) => (
+                            <button key={index}
+                                className={number === index && color == 1 ? _color : 'rowButton MuiButton-outlinedPrimary'}
+                                onClick={() => handleAnswerOptionClick(answerOption.isCorrect, index)}>{answerOption.answerText}</button>
 
-                    ))}
-                </div>
-            </>)}
+                        ))}
+                    </div>
+                </>)}
 
-            {/* {showScore ? (
+
+                {/* {showScore ? (
 				<div className='score-section'>
 					You scored {score} out of {questionsData.length}
 				</div>
@@ -125,8 +126,9 @@ export default function QuizApp() {
 					</div>
 				</>
 			)} */}
-        </div>
+            </div>
 
+        </>
     );
 }
 

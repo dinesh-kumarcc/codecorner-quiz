@@ -17,6 +17,8 @@ export default function App(){
 	}
 
 	return(
+		<>
+		 {/* <> <div className='question-container2'><h5 className='App-header2'>~</h5></div> */}
 		<div className='div'>
 			{play ? (<>
 			<QuizApp/>
@@ -31,7 +33,9 @@ export default function App(){
 				</div>
 				</>
 			)}
+			
 		</div>
+			</>
 	)
 }
 

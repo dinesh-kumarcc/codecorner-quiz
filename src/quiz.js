@@ -89,96 +89,96 @@ const questions = [
             { answerText: 'Martina Hingis', isCorrect: 0 },
         ],
     },
-    // {
-    //     questionText: 'In which city were the 1992 Summer Olympics held?',
-    //     answerOptions: [
-    //         { answerText: 'Atlanta', isCorrect: 0 },
-    //         { answerText: 'Barcelona', isCorrect: 1 },
-    //         { answerText: 'Sydney', isCorrect: 0 },
-    //         { answerText: 'Seoul', isCorrect: 0 },
-    //     ],
-    // },
-    // {
-    //     questionText: 'Which composer scored 2000s classics such as Gladiator?',
-    //     answerOptions: [
-    //         { answerText: 'John Williams', isCorrect: 0 },
-    //         { answerText: 'Hans Zimmer', isCorrect: 1 },
-    //         { answerText: 'Danny Elfman', isCorrect: 0 },
-    //         { answerText: 'James Horner', isCorrect: 0 },
-    //     ],
-    // },
-    // {
-    //     questionText: 'Who was elected President of the United States in 2017?',
-    //     answerOptions: [
-    //         { answerText: 'Donald Trump', isCorrect: 1 },
-    //         { answerText: 'Barack Obama', isCorrect: 0 },
-    //         { answerText: 'George Bush', isCorrect: 0 },
-    //         { answerText: 'James Horner', isCorrect: 0 },
-    //     ],
-    // },
-    // {
-    //     questionText: 'When did Jonas Brothers make their comeback to the music world?',
-    //     answerOptions: [
-    //         { answerText: '2011', isCorrect: 0 },
-    //         { answerText: '2015', isCorrect: 0 },
-    //         { answerText: '2017', isCorrect: 0 },
-    //         { answerText: '2019', isCorrect: 1 },
-    //     ],
-    // },
-    // {
-    //     questionText: 'What is the national language of Canada?',
-    //     answerOptions: [
-    //         { answerText: 'English', isCorrect: 0 },
-    //         { answerText: 'Dutch', isCorrect: 1 },
-    //         { answerText: 'Hindi', isCorrect: 0 },
-    //         { answerText: 'French', isCorrect: 0 },
-    //     ],
-    // },
-    // {
-    //     questionText: 'A la Crecy is a French dish made of what?',
-    //     answerOptions: [
-    //         { answerText: 'Carrots', isCorrect: 1 },
-    //         { answerText: 'Apples', isCorrect: 0 },
-    //         { answerText: 'Banana', isCorrect: 0 },
-    //         { answerText: 'Potatoes', isCorrect: 0 },
-    //     ],
-    // },
-    // {
-    //     questionText: 'Which core ingredient is important to cook a savory dish?',
-    //     answerOptions: [
-    //         { answerText: 'Salt', isCorrect: 1 },
-    //         { answerText: 'Apples', isCorrect: 0 },
-    //         { answerText: 'Butter', isCorrect: 0 },
-    //         { answerText: 'Sugar', isCorrect: 0 },
-    //     ],
-    // },
-    // {
-    //     questionText: 'Brazil is the biggest producer of?',
-    //     answerOptions: [
-    //         { answerText: 'Oil', isCorrect: 0 },
-    //         { answerText: 'Rice', isCorrect: 0 },
-    //         { answerText: 'Coffee', isCorrect: 1 },
-    //         { answerText: 'Sugar', isCorrect: 0 },
-    //     ],
-    // },
-    // {
-    //     questionText: 'Saudi Arabia is the biggest producer of?',
-    //     answerOptions: [
-    //         { answerText: 'Coal', isCorrect: 0 },
-    //         { answerText: 'Rice', isCorrect: 0 },
-    //         { answerText: 'Sugar', isCorrect: 0 },
-    //         { answerText: 'Oil', isCorrect: 1 },
-    //     ],
-    // },
-    // {
-    //     questionText: 'Which country is infamously known as Arch Rival of Pakistan?',
-    //     answerOptions: [
-    //         { answerText: 'America', isCorrect: 0 },
-    //         { answerText: 'India', isCorrect: 1 },
-    //         { answerText: 'FGS', isCorrect: 0 },
-    //         { answerText: 'Afghanistan', isCorrect: 0 },
-    //     ],
-    // },
+    {
+        questionText: 'In which city were the 1992 Summer Olympics held?',
+        answerOptions: [
+            { answerText: 'Atlanta', isCorrect: 0 },
+            { answerText: 'Barcelona', isCorrect: 1 },
+            { answerText: 'Sydney', isCorrect: 0 },
+            { answerText: 'Seoul', isCorrect: 0 },
+        ],
+    },
+    {
+        questionText: 'Which composer scored 2000s classics such as Gladiator?',
+        answerOptions: [
+            { answerText: 'John Williams', isCorrect: 0 },
+            { answerText: 'Hans Zimmer', isCorrect: 1 },
+            { answerText: 'Danny Elfman', isCorrect: 0 },
+            { answerText: 'James Horner', isCorrect: 0 },
+        ],
+    },
+    {
+        questionText: 'Who was elected President of the United States in 2017?',
+        answerOptions: [
+            { answerText: 'Donald Trump', isCorrect: 1 },
+            { answerText: 'Barack Obama', isCorrect: 0 },
+            { answerText: 'George Bush', isCorrect: 0 },
+            { answerText: 'James Horner', isCorrect: 0 },
+        ],
+    },
+    {
+        questionText: 'When did Jonas Brothers make their comeback to the music world?',
+        answerOptions: [
+            { answerText: '2011', isCorrect: 0 },
+            { answerText: '2015', isCorrect: 0 },
+            { answerText: '2017', isCorrect: 0 },
+            { answerText: '2019', isCorrect: 1 },
+        ],
+    },
+    {
+        questionText: 'What is the national language of Canada?',
+        answerOptions: [
+            { answerText: 'English', isCorrect: 0 },
+            { answerText: 'Dutch', isCorrect: 1 },
+            { answerText: 'Hindi', isCorrect: 0 },
+            { answerText: 'French', isCorrect: 0 },
+        ],
+    },
+    {
+        questionText: 'A la Crecy is a French dish made of what?',
+        answerOptions: [
+            { answerText: 'Carrots', isCorrect: 1 },
+            { answerText: 'Apples', isCorrect: 0 },
+            { answerText: 'Banana', isCorrect: 0 },
+            { answerText: 'Potatoes', isCorrect: 0 },
+        ],
+    },
+    {
+        questionText: 'Which core ingredient is important to cook a savory dish?',
+        answerOptions: [
+            { answerText: 'Salt', isCorrect: 1 },
+            { answerText: 'Apples', isCorrect: 0 },
+            { answerText: 'Butter', isCorrect: 0 },
+            { answerText: 'Sugar', isCorrect: 0 },
+        ],
+    },
+    {
+        questionText: 'Brazil is the biggest producer of?',
+        answerOptions: [
+            { answerText: 'Oil', isCorrect: 0 },
+            { answerText: 'Rice', isCorrect: 0 },
+            { answerText: 'Coffee', isCorrect: 1 },
+            { answerText: 'Sugar', isCorrect: 0 },
+        ],
+    },
+    {
+        questionText: 'Saudi Arabia is the biggest producer of?',
+        answerOptions: [
+            { answerText: 'Coal', isCorrect: 0 },
+            { answerText: 'Rice', isCorrect: 0 },
+            { answerText: 'Sugar', isCorrect: 0 },
+            { answerText: 'Oil', isCorrect: 1 },
+        ],
+    },
+    {
+        questionText: 'Which country is infamously known as Arch Rival of Pakistan?',
+        answerOptions: [
+            { answerText: 'America', isCorrect: 0 },
+            { answerText: 'India', isCorrect: 1 },
+            { answerText: 'FGS', isCorrect: 0 },
+            { answerText: 'Afghanistan', isCorrect: 0 },
+        ],
+    },
     // {
     //     questionText: 'What is actually electricity?',
     //     answerOptions: [

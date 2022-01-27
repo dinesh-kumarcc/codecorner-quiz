@@ -220,3 +220,41 @@ button svg {
   font-size: 16px;
   cursor: pointer;
 }
+
+/* .App-header2{
+  align-items: center;
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: black;
+  margin: 5px;
+} */
+
+.App-header2 {
+  align-items: center;
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: blue;
+  margin: 5px;
+  padding-top: 4px;
+  margin-top: 8px;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+
+.question-container2{
+  font-style: italic;
+  font-family: sans-serif;
+  font-size: 10px;
+  background-color: rgb(248, 248, 248);
+  /* padding: 10px 20px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 33px;
+}
