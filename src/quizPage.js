@@ -26,27 +26,14 @@ export default function QuizApp() {
     }, [score, showScore])
 
     useEffect(() => {
-        console.log(questions, 'questions questions')
-        // const arr = [2, 5, 4, 45, 32, 46, 78, 87, 98, 56, 23, 12];
-        // const chooseRandom = (arr, num = 1) => {
-        //     const res = [];
-        //     for (let i = 0; i < num;) {
-        //         const random = Math.floor(Math.random() * arr.length);
-        //         if (res.indexOf(arr[random]) !== -1) {
-        //             continue;
-        //         };
-        //         res.push(arr[random]);
-        //         i++;
-        //     };
-        //     return res;
-        // };
-        // console.log(chooseRandom(arr, 4),'+++');
+        // console.log(questions, 'questions questions')
 
     }, [color, _color, selected])
+
     const [number, setnumber] = useState(5);
 
     const handleAnswerOptionClick = (isCorrect, index) => {
-        console.log(isCorrect, 'iscorrect', index)
+        // console.log(isCorrect, 'iscorrect', index)
 
         if (isCorrect == 1) {
             setScore(score + 1);
@@ -82,7 +69,6 @@ export default function QuizApp() {
             const questionsq = allquestions.sort(() => Math.random() - Math.random()).slice(0, 10) || [];
             console.log(questionsq, 'app file')
             localStorage.setItem("randomQuiz", JSON.stringify(questionsq))
-
         }
     }
 

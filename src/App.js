@@ -11,14 +11,14 @@ export default function App(){
 		localStorage.setItem("quizApp", JSON.stringify(questions))
 		const allquestions = JSON.parse(localStorage.getItem("quizApp"));
 		const questionsq = allquestions.sort(() => Math.random() - Math.random()).slice(0, 10) || [];
-		console.log(questionsq,'app file')
+		// console.log(questionsq,'app file')
 		localStorage.setItem("randomQuiz", JSON.stringify(questionsq))
 
 	},[])
 
 
 	function playButton() {
-		console.log('playButton');
+		// console.log('playButton');
 		setPlay(true)
 	}
 
